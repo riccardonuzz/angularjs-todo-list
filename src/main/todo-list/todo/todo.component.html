@@ -1,0 +1,51 @@
+<li class="list-group-item d-flex justify-content-between align-items-center">
+    <div ng-show="!$ctrl.isInEditMode">
+        {{$ctrl.todo.title}}
+    </div>
+    <form ng-show="$ctrl.isInEditMode">
+        <div class="row">
+            <div class="col-sm-6">
+                <input
+                    type="text"
+                    ng-model="$ctrl.todo.title"
+                    class="form-control"
+                    required
+                >
+            </div>
+            <button
+                type="submit"
+                class="btn btn-outline-success btn-sm"
+                ng-disabled="!$ctrl.todo.title"
+                ng-click="$ctrl.updateTodo()"
+            >
+                Confirm
+            </button>
+        </div>
+    </form>
+    <span class="badge">
+        <input
+            class="form-check-input"
+            type="checkbox"
+            value="$ctrl.todo.id"
+            ng-checked="$ctrl.todo.completed"
+            ng-click="$ctrl.setCompleted()"
+            ng-disabled="$ctrl.isInEditMode"
+        >
+        <button
+            type="button"
+            class="btn btn-outline-primary btn-sm"
+            ng-click="$ctrl.setInEditMode()"
+            ng-disabled="$ctrl.isInEditMode"
+        >
+            Edit
+        </button>
+        <button
+            type="button"
+            class="btn btn-outline-danger btn-sm"
+            ng-click="$ctrl.deleteTodo()"
+            ng-disabled="$ctrl.isInEditMode"
+        >
+            Delete
+        </button>
+    </span>
+</li>
