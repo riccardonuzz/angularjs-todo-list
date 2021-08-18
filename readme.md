@@ -15,3 +15,10 @@ npm i
 npm run start
 ```
 
+<br />
+
+## References
+
+<a href="https://getbootstrap.com/">Bootstrap</a>
+<br />
+<a href="https://angularjs.org/">Angular.js</a>
